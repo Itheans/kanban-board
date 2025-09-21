@@ -4,4 +4,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
   if (!token.value) {
     return navigateTo('/login')
   }
+  
+  // Optional: You can add token validation here
+  // by making a quick API call to verify the token is still valid
 })

@@ -14,9 +14,5 @@ export default defineNuxtConfig({
       apiBase: '/api'
     }
   },
-  nitro: {
-    experimental: {
-      wasm: true
-    }
-  }
+  ssr: true
 })
