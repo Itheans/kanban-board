@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom animations for better UX */
+@layer utilities {
+  .drag-handle {
+    cursor: grab;
+  }
+  
+  .drag-handle:active {
+    cursor: grabbing;
+  }
+  
+  .task-card {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .task-card:hover {
+    transform: translateY(-1px);
+  }
+  
+  .dragging {
+    opacity: 0.5;
+    transform: rotate(5deg) scale(1.05);
+    z-index: 1000;
+  }
+  
+  .drag-over {
+    background-color: #eff6ff;
+    border: 2px dashed #3b82f6;
+  }
+  
+  /* Smooth column transitions */
+  .kanban-column {
+    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+  }
+  
+  /* Task movement animations */
+  .task-move {
+    transition: transform 0.3s ease-in-out;
+  }
+}
